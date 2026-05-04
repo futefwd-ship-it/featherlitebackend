@@ -1,32 +1,34 @@
 import express from "express";
-import mongoose from 'mongoose';
-import cors from 'cors';
+import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
-import galleryRoutes from './routes/galleryRoutes.js'
+
+import galleryRoutes from "./routes/galleryRoutes.js";
+import inventoryRoutes from "./routes/inventoryRoutes.js";
 
 dotenv.config();
 
-// connect DB
+// DB
 connectDB();
 
 const app = express();
 
-// middleware
+// Middleware
 app.use(express.json());
 app.use(cors());
 
-
+// Test route
 app.get("/", (req, res) => {
-    res.send("Api is running.......");
-})
+  res.send("API is running...");
+});
 
-app.use("/api/gallery",galleryRoutes);
+// Routes
+app.use("/api/gallery", galleryRoutes);
+app.use("/api/inventory", inventoryRoutes);
 
-
-// server
+// Server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
