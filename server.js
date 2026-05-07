@@ -6,6 +6,7 @@ import { connectDB } from "./config/db.js";
 import galleryRoutes from "./routes/galleryRoutes.js";
 import inventoryRoutes from "./routes/inventoryRoutes.js";
 
+
 dotenv.config();
 
 // DB
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/inventory", inventoryRoutes);
+
 
 // Server
 const PORT = process.env.PORT || 5000;
