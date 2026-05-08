@@ -31,7 +31,7 @@ export const updateInventory=async (req,res)=>{
   try{
     const updatedInventory=await Inventory.findByIdAndUpdate(
       req.params.id,
-      req.bady,
+      req.body,
       {new:true}
     );
 
