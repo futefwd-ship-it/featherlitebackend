@@ -7,6 +7,7 @@ import galleryRoutes from "./routes/galleryRoutes.js";
 import inventoryRoutes from "./routes/inventoryRoutes.js";
 
 import virtualTourRoutes from './routes/virtualTourRoutes.js';
+import amenitiesRoutes from './routes/amenitiesRoute.js';
 
 
 dotenv.config();
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/inventory", inventoryRoutes);
 app.use("/api/virtualtour",virtualTourRoutes);
+app.use("/api/amenities", amenitiesRoutes);
 
 
 // Server
