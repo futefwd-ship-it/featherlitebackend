@@ -6,6 +6,8 @@ import { connectDB } from "./config/db.js";
 import galleryRoutes from "./routes/galleryRoutes.js";
 import inventoryRoutes from "./routes/inventoryRoutes.js";
 
+import virtualTourRoutes from './routes/virtualTourRoutes.js';
+
 
 dotenv.config();
 
@@ -26,6 +28,7 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/inventory", inventoryRoutes);
+app.use("/api/virtualtour",virtualTourRoutes);
 
 
 // Server
